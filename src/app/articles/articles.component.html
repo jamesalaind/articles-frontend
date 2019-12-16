@@ -1,0 +1,44 @@
+<div class="container">
+	<div class="row">
+		<div class="col-6">
+			<h2>Current Articles</h2>
+
+			<ul class="list-group">
+				<li class="list-group-item pointer"
+					*ngFor="let article of articles"
+					(click)="getArticleData(article)">
+
+					<h4>{{ article.title }}</h4>
+					{{ article.description.substring(0,20) }} ...
+
+				</li>
+			</ul>
+		</div>
+		<div class="col-6">
+			
+			<form [formGroup]="form" (ngSubmit)="saveArticle()" *ngIf="!isRead || id==null">
+				<h4>New Article</h4>
+				<input type="hidden" formControlName="id">
+				<input type="text"
+					class="form-control" placeholder="Title" formControlName="title">
+				<textarea placeholder="Description" class="form-control" formControlName="description" height="200px"> </textarea>
+				<button class="btn btn-primary function-button" type="submit">Save</button>
+			</form>
+
+			<div *ngIf="isRead && id" class="boxed">
+				<h2> {{ this.title }}
+					<a (click)="newRecord()">[New]</a>
+					<a (click)="isRead=false;">[Edit]</a>
+					<a (click)="deleteArticle(id);" class="danger">[Delete]</a>
+				</h2>
+				<hr>
+				<p> {{ this.description }} </p>
+			</div>
+		</div>
+	</div>
+
+	
+
+
+</div>
+

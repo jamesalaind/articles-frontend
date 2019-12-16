@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+.form-control.ng-invalid.ng-touched {
+	border: 2px solid red;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.pointer:hover {
+	background-color: #F0EAD6;
+}

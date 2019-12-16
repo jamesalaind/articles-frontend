@@ -1,0 +1,50 @@
+textarea.form-control {
+	height: 500px;
+}
+
+.form-control {
+	margin-top: 10px;
+}
+
+button.function-button {
+	margin-top: 20px;
+	margin-left: 5px;
+}
+
+.list-group{
+    max-height: 500px;
+    margin-bottom: 10px;
+    overflow:scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+div.boxed {
+	border: solid #DCDCDC;
+	max-height: 550px;
+	min-height: 550px;
+	overflow:scroll;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px;
+}
+
+a {
+	cursor: pointer !important;
+	font-size: 12px;
+	color: #2F4F4F;
+}
+
+a:hover {
+	color: blue;
+}
+
+a.danger {
+	color: deeppink
+}
+
+a.danger:hover {
+	color: red;
+}
+
+.new-button {
+	float: right;
+}
