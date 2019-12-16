@@ -59,13 +59,13 @@ export class ArticlesComponent implements OnInit {
   }
 
   saveArticle() {
-  	this.service.saveArticle(this.form.value, 'james')
+  	this.service.saveArticle(this.form.value)
   		.subscribe(response => {
 				this.getArticles({'id': response['id'], 'title': response['title'], 'description': response['description']});
 			}, 
 			(error: Response) => {
 					if (error.status === 422) {
-						alert('Error: ' + error.error.errors.join(', '));
+						alert('Error: ' + error['error'].errors.join(', '));
 					} else {
 						alert('An unexpected error occured');
 					}
